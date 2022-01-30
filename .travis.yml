@@ -1,0 +1,22 @@
+---
+
+dist: focal
+language: minimal
+
+services:
+  - docker
+
+env:
+  global:
+    - DOCKER_REPO: lifeofguenter/ansible
+
+install:
+  - make build
+  - make test
+
+deploy:
+  provider: script
+  script: make publish
+  skip_cleanup: true
+  on:
+    branch: main
