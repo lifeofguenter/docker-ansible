@@ -12,7 +12,7 @@ build:
 	docker build \
 		--pull \
 		-t '$(DOCKER_REPO):latest' \
-		tags/5
+		tags/7
 
 
 .PHONY: test
