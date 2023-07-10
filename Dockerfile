@@ -1,4 +1,4 @@
-FROM python:3.9-alpine
+FROM python:3.11-alpine
 
 CMD ["bash", "-c"]
 
@@ -11,7 +11,8 @@ RUN set -ex && \
       openssl \
       libffi \
       musl \
-      make
+      make \
+      gettext
 
 RUN set -ex && \
     apk add --quiet --no-cache --virtual .build-deps \
@@ -20,6 +21,6 @@ RUN set -ex && \
       linux-headers \
       musl-dev && \
     pip3 install \
-      ansible==5.10.0 \
-      ansible-lint==6.12.0 && \
+      ansible==8.1.0 \
+      ansible-lint==6.17.2 && \
     apk del --quiet .build-deps

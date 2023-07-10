@@ -2,7 +2,6 @@
 .idea/
 .editorconfig
 .gitignore
-.travis.yml
 LICENSE
 Makefile
 README.md
